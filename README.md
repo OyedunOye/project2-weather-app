@@ -4,7 +4,7 @@ A simple weather app to build knowledge of Frontend development and also usage o
 
 ## API Reference
 
-#### Get all items
+#### Get weather info
 
 ```http
   GET {weather_url}/api/...
@@ -20,7 +20,7 @@ A simple weather app to build knowledge of Frontend development and also usage o
 - [@odo](https://github.com/Peter-Odo)
 
 ## Features
-
+- Colors - [primary color (#000000), secondary color (slate-800)]
 - Project setup [✔]
 - Project layout [✔]
 - Implement Sidebar UI [ ]
