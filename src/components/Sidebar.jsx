@@ -8,22 +8,22 @@ import { VscSettings } from "react-icons/vsc";
 const sideBarMenu = [
   {
     id: 1,
-    icon: <TiWeatherPartlySunny />,
+    icon: TiWeatherPartlySunny,
     name: "Weather",
   },
   {
     id: 2,
-    icon: <TfiMenuAlt />,
+    icon: TfiMenuAlt,
     name: "Cities",
   },
   {
     id: 3,
-    icon: <CiMap />,
+    icon: CiMap,
     name: "Map",
   },
   {
     id: 4,
-    icon: <VscSettings />,
+    icon: VscSettings,
     name: "Settings",
   },
 ];
@@ -42,7 +42,8 @@ const Sidebar = () => {
               key={menu.id}
               className="cursor-pointer flex flex-col items-center gap-2 p-4 hover:bg-slate-500 rounded-2xl"
             >
-              <span className="text-2xl">{menu.icon}</span>
+          
+              {<menu.icon className="w-5 h-5" />}
               <span>{menu.name}</span>
             </li>
           ))}
