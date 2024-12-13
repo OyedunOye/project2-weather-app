@@ -1,5 +1,4 @@
-import ForecastContainer from "./components/ForecastContainer";
-import Sidebar from "./components/Sidebar";
+import { ForecastContainer, FutureForecasts, Sidebar } from "./components";
 
 function App() {
   return (
@@ -11,7 +10,9 @@ function App() {
         <div className="w-[58%] border">
           <ForecastContainer />
         </div>
-        <div className="w-[32%] border">Hello</div>
+        <div className="w-[32%] rounded-xl bg-slate-800 mt-20">
+          <FutureForecasts />
+        </div>
       </div>
     </main>
   );
