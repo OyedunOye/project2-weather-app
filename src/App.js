@@ -7,7 +7,7 @@ function App() {
         <div className="w-[8%] rounded-xl bg-slate-800">
           <Sidebar />
         </div>
-        <div className="w-[58%] border">
+        <div className="w-[58%]">
           <ForecastContainer />
         </div>
         <div className="w-[32%] rounded-xl bg-slate-800 mt-20">
