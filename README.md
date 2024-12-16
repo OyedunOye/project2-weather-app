@@ -20,11 +20,12 @@ A simple weather app to build knowledge of Frontend development and also usage o
 - [@odo](https://github.com/Peter-Odo)
 
 ## Features
+
 - Colors - [primary color (#000000), secondary color (slate-800)]
 - Project setup [✔]
 - Project layout [✔]
 - Implement Sidebar UI [✔]
-- Implement Forecast Container UI [ ]
+- Implement Forecast Container UI [✔]
 - Implement Advance Forecast UI [✔]
 
 ## Run Locally
