@@ -31,20 +31,20 @@ const sideBarMenu = [
 const Sidebar = () => {
   return (
     <nav className="flex flex-col items-center">
-      <div className="w-24 m-8 flex box-align-center bg-slate-600 border-none rounded-2xl">
-        <img src={wind} alt="wind" className="p-2 cursor-pointer" />
+      <div className="w-14 h-14 m-8 flex box-align-center bg-slate-600 border-none rounded-2xl">
+        <img src={wind} alt="wind" className="p-2 object-cover h-full w-full cursor-pointer" />
       </div>
 
-      <div className="m-16">
+      <div className="m-8">
         <ul className="flex flex-col gap-6">
           {sideBarMenu.map((menu) => (
             <li
               key={menu.id}
-              className="cursor-pointer flex flex-col items-center gap-2 p-4 hover:bg-slate-500 rounded-2xl"
+              className="cursor-pointer flex flex-col items-center gap-1 p-2 hover:bg-slate-500 rounded-2xl"
             >
           
               {<menu.icon className="w-5 h-5" />}
-              <span>{menu.name}</span>
+              <p className="text-sm">{menu.name}</p>
             </li>
           ))}
         </ul>
