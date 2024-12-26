@@ -1,4 +1,4 @@
-import { sun } from "../assets";
+import { cloudysun, sun, rainycloud, wind, storm, clearsky, snow, rain, cloud } from "../assets";
 import AirConditionsCard from "./AirConditionsCard";
 import ForecastCard from "./ForecastCard";
 import Searchbar from "./Searchbar";
@@ -11,6 +11,45 @@ const ForecastContainer = ({
   weatherData,
 }) => {
   console.log("LOGGING IN THE FORECAST_CONTAINER", weatherData);
+
+  const imageSetter = () => {
+    const weatherCondition = weatherData['weather'][0]['main'].toLowerCase();
+    let weatherImage = '';
+    if (weatherCondition.includes('cloud') && weatherCondition.includes('sun')) {
+      let weatherImage = clearsky
+      return weatherImage
+    }
+    else if (weatherCondition.includes('cloud')) {
+      let weatherImage = cloud
+      return weatherImage
+    }
+    else if (weatherCondition.includes('rain')) {
+      let weatherImage = rain
+      return weatherImage
+
+    }
+    else if (weatherCondition.includes('snow')) {
+      let weatherImage = snow
+      return weatherImage
+
+    }
+    else if (weatherCondition.includes('wind')) {
+      let weatherImage = wind
+      return weatherImage
+
+    }
+    else if(weatherCondition.includes('storm')) {
+      let weatherImage = storm
+      return weatherImage
+
+    }
+
+    else {
+      let weatherImage = sun
+      return weatherImage
+
+    }
+  }
 
   return (
     <section className="w-full h-full flex flex-col justify-between">
@@ -29,17 +68,18 @@ const ForecastContainer = ({
               <h4 className="text-3xl font-extrabold text-gray-300">
                 {weatherData?.name || "Madrid"}
               </h4>
-              <p className="text-sm text-gray-500">Chances of rain: 0%</p>
+              <p className="text-sm text-gray-500">Chances of rain: {weatherData.length===0? 0 : weatherData['main']['humidity']}%</p>
             </div>
-            <h5 className="text-4xl font-extrabold text-gray-300">31ºC</h5>
+            <h5 className="text-4xl font-extrabold text-gray-300">{weatherData.length===0? 31 : weatherData['main']['temp']}°C</h5>
           </div>
 
           <div className="h-full">
             <img
               className="object-cover h-full"
-              src={sun}
+              src={weatherData.length===0?sun :imageSetter()}
               alt="Bright golden sun"
             />
+
           </div>
         </div>
       )}
@@ -48,7 +88,7 @@ const ForecastContainer = ({
         <ForecastCard />
       </div>
       <div className="h-[calc(82%/2.6)] bg-slate-800 rounded-[10px] ">
-        <AirConditionsCard />
+        <AirConditionsCard weatherData={ weatherData} />
       </div>
     </section>
   );
