@@ -4,6 +4,10 @@ import sun from './sun.png'
 import wind from './wind.png'
 import rainycloud from './rainycloud.png'
 import storm from './thunderstorm.png'
+import snow from './snow.png'
+import rain from './raining.png'
+import clearsky from './clearsky.png'
+
 
 export {
     cloud,
@@ -11,5 +15,8 @@ export {
     sun,
     wind,
     rainycloud,
-    storm
+    storm,
+    snow,
+    rain,
+    clearsky
 }
