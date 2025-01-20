@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getWeather } from "./services/api.service";
 import { ForecastContainer, FutureForecasts, Sidebar } from "./components";
+import { getWeatherV2 } from "./services/api-v2.service";
 
 function App() {
   const [textInput, setTextInput] = useState("");
@@ -24,6 +25,8 @@ function App() {
   const onChangeText = (e) => {
     setTextInput(e.target.value);
   };
+
+  getWeatherV2("London").then((data) => console.log(data));
 
   return (
     <main className="h-screen w-full bg-slate-950 text-white flex flex-col gap-4 p-4 overflow-hidden">
