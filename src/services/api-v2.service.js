@@ -31,6 +31,7 @@ export const getWeatherV2 = async (city) => {
         lat: getLatAndLong[0]?.lat,
         lon: getLatAndLong[0]?.lon,
         appid: API_KEY,
+        units: "metric",
       };
 
       const response = await axios.get(UPDATED_BASE_URL, { params: params });
