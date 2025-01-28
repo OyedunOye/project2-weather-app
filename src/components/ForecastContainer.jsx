@@ -36,7 +36,7 @@ const ForecastContainer = ({
               </h4>
               <p className="text-sm text-gray-500">
                 Chances of rain:{" "}
-                {weatherData.length === 0 ? 0 : weatherData["daily"][0]["pop"]/1*100} %
+                {weatherData.length === 0 ? 0 : (weatherData["daily"][0]["pop"]/1*100).toFixed(0)} %
               </p>
             </div>
             <h5 className="text-4xl font-extrabold text-gray-300">

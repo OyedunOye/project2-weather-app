@@ -32,7 +32,7 @@ const AirConditionsCard = ({weatherData}) => {
               <p className="text-sm font-extrabold text-gray-400 -mt-1">
                 Chances of rain
               </p>
-              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 0 : weatherData['daily'][0]['pop']/1*100} %</p>
+              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 0 : (weatherData['daily'][0]['pop']/1*100).toFixed(0)} %</p>
             </div>
           </div>
         </div>
