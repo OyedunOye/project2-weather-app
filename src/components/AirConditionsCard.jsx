@@ -23,7 +23,7 @@ const AirConditionsCard = ({weatherData}) => {
               <p className="text-sm font-extrabold text-gray-400 -mt-1">
                 Real Feel
               </p>
-              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 30 : weatherData['main']['feels_like']}°C</p>
+              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 30 : weatherData['current']['feels_like']} °C</p>
             </div>
           </div>
           <div className="flex items-start gap-x-2">
@@ -32,7 +32,7 @@ const AirConditionsCard = ({weatherData}) => {
               <p className="text-sm font-extrabold text-gray-400 -mt-1">
                 Chances of rain
               </p>
-              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 0 : weatherData['main']['humidity']}%</p>
+              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 0 : (weatherData['daily'][0]['pop']/1*100).toFixed(0)} %</p>
             </div>
           </div>
         </div>
@@ -42,14 +42,14 @@ const AirConditionsCard = ({weatherData}) => {
             <FiWind className="w-6 h-6 text-gray-400" />
             <div className="flex flex-col gap-y-1">
               <p className="text-sm font-extrabold text-gray-400">Wind</p>
-              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 0.2 : weatherData['wind']['speed']} km/h</p>
+              <p className="text-lg font-bold text-gray-300">{weatherData.length===0? 0.2 : weatherData['current']['wind_speed']} km/h</p>
             </div>
           </div>
           <div className="flex items-start gap-x-2">
             <FaSun className="w-6 h-6 text-gray-400" />
             <div className="flex flex-col gap-y-1">
               <p className="text-sm font-extrabold text-gray-400">UV Index</p>
-              <p className="text-lg font-bold text-gray-300">3</p>
+              <p className="text-lg font-bold text-gray-300">{weatherData.length === 0 ? 3 : weatherData['current']['uvi']}</p>
             </div>
           </div>
         </div>
