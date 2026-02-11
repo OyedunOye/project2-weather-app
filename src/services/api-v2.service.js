@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
+const API_KEY = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
 const GEO_LOCATION_BASE_URL =
-  process.env.REACT_APP_OPEN_WEATHER_ONE_CALL_GEOLOCATION_BASE_URL;
-const UPDATED_BASE_URL = process.env.REACT_APP_OPEN_WEATHER_ONE_CALL_BASE_URL;
+  import.meta.env.VITE_OPEN_WEATHER_ONE_CALL_GEOLOCATION_BASE_URL;
+const UPDATED_BASE_URL = import.meta.env.VITE_OPEN_WEATHER_ONE_CALL_BASE_URL;
 
 const getGeoLocation = async (city) => {
   const params = {

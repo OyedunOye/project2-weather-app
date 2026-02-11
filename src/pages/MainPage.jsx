@@ -1,10 +1,10 @@
 import { useState } from "react";
 // import { getWeather } from "./services/api.service";
-import { sun, wind, storm, clearsky, snow, rain, cloud } from "./assets";
-import { ForecastContainer, FutureForecasts, Sidebar } from "./components";
-import { getWeatherV2 } from "./services/api-v2.service";
+import { sun, wind, storm, clearsky, snow, rain, cloud } from "../assets";
+import { ForecastContainer, FutureForecasts, Sidebar } from "../components";
+import { getWeatherV2 } from "../services/api-v2.service";
 
-function App() {
+function Home() {
   const [textInput, setTextInput] = useState("");
   const [weatherData, setWeatherData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -57,12 +57,12 @@ function App() {
   };
 
   return (
-    <main className="h-screen w-full bg-slate-950 text-white flex flex-col gap-4 p-4 overflow-hidden">
-      <div className="h-full w-full min-xl:px-[20vw] flex justify-center gap-x-6">
-        <div className="w-[8%] rounded-xl bg-slate-800">
+    <main className="w-full bg-slate-950 text-white flex flex-col gap-4 p-4 overflow-y-auto">
+      <div className="h-full w-full min-xl:px-[20vw] flex justify-center gap-x-6 max-lg:gap-x-3">
+        <div className="w-[8%] max-lg:w-[20%] rounded-xl bg-slate-800">
           <Sidebar />
         </div>
-        <div className="w-[58%]">
+        <div className="w-[58%] max-lg:w-[78%] gap-4">
           <ForecastContainer
             textInput={textInput}
             onChangeText={onChangeText}
@@ -72,10 +72,10 @@ function App() {
             imageSetter={imageSetter}
           />
         </div>
-        <div className="w-[32%] rounded-xl bg-slate-800 mt-20">
+        <div className="w-[32%] rounded-xl bg-slate-800 mt-20 max-lg:hidden">
           <FutureForecasts
-          imageSetter={imageSetter}
-          weatherData={weatherData}
+            imageSetter={imageSetter}
+            weatherData={weatherData}
           />
         </div>
       </div>
@@ -83,4 +83,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

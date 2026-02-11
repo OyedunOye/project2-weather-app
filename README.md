@@ -22,11 +22,6 @@ A simple weather app to build knowledge of Frontend development and also usage o
 ## Features
 
 - Colors - [primary color (#000000), secondary color (slate-800)]
-- Project setup [✔]
-- Project layout [✔]
-- Implement Sidebar UI [✔]
-- Implement Forecast Container UI [✔]
-- Implement Advance Forecast UI [✔]
 
 ## Run Locally
 
@@ -51,7 +46,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm start
+  npm run dev
 ```
 
 ## Screenshots
@@ -60,7 +55,7 @@ Start the server
 
 ## Tech Stack
 
-**Client:** React, TailwindCSS
+**Client:** Vite, TailwindCSS
 
 **Server:** OpenWeather API
 

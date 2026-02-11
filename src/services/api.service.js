@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_OPEN_WEATHER_API_KEY;
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const API_KEY = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const getWeather = async (city) => {
   const params = {
